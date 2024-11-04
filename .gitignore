@@ -1,0 +1,6 @@
+env/
+.env
+.DS_Store
+media/uploads/
+mysite/media/uploads/
+db.sqlite3

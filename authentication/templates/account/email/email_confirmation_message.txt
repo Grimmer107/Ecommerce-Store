@@ -1,0 +1,7 @@
+Hello {{ user.first_name }},
+
+Please click the link below to confirm you email address:
+
+Confirm Email: {{ activate_url }}
+
+Best, Ecommerce Store
