@@ -5,7 +5,7 @@ import pytest
 from pytest_factoryboy import register
 
 # Set the DJANGO_SETTINGS_MODULE environment variable for pytest
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysite.mysite.settings.local')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysite.mysite.settings.test')
 
 from store.tests.factories import (CityFactory, CountryFactory, ProductCategoryFactory, ProductFactory, UserFactory,
                                    OrderProductFactory, OrderFactory)

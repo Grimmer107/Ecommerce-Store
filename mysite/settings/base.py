@@ -15,6 +15,7 @@ from datetime import timedelta
 from pathlib import Path
 
 from environs import Env
+import sentry_sdk
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -282,3 +283,16 @@ TESTING_EMAIL = 'testuser@example.com'
 
 BASE_FRONTEND_URL = env('BASE_FRONTEND_URL')
 BASE_BACKEND_URL = 'http://127.0.0.1:8000'
+
+sentry_sdk.init(
+    dsn='https://f139c06d433f45f3967307bcc5d907af@o4508247576215552.ingest.us.sentry.io/4508247579951104',
+    # Set traces_sample_rate to 1.0 to capture 100%
+    # of transactions for tracing.
+    traces_sample_rate=1.0,
+    _experiments={
+        # Set continuous_profiling_auto_start to True
+        # to automatically start the profiler on when
+        # possible.
+        'continuous_profiling_auto_start': True,
+    },
+)

@@ -1,6 +1,5 @@
-env/
 .env
 .DS_Store
-media/uploads/
-mysite/media/uploads/
+*/media/uploads/
 db.sqlite3
+**/__pycache__/**
