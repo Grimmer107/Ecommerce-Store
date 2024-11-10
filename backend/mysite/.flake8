@@ -1,5 +1,5 @@
 [flake8]
-exclude = .git,__pycache__,__init__.py,venv/,*/migrations/*,*/tests/*,*/settings/local.py
+exclude = .git,__pycache__,__init__.py,**/migrations/*,**/tests/**,**/settings/**,conftest.py
 max-line-length = 120
 max-complexity = 12
 filename = *.py
