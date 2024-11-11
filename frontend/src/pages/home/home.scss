@@ -1,0 +1,49 @@
+@import 'styles/_mixins';
+
+.home {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  @include vertical-center;
+
+  @include sm {
+    justify-content: flex-start;
+  }
+
+  .top-section {
+    width: 90%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    @include vertical-center;
+    align-items: flex-start;
+
+    h4 {
+      font-size: 1.25rem;
+      font-weight: 400;
+    }
+
+    @include breakpoint(480px) {
+      width: 80%;
+    }
+    @include breakpoint(680px) {
+      width: 60%;
+    }
+
+    .filters {
+      width: 100%;
+    }
+  }
+
+  .search-bar {
+    width: 100%;
+    @include horizontal-center;
+  }
+
+  .products-grid {
+    width: 100%;
+    height: 100%;
+    margin-top: 1em;
+    @include horizontal-center;
+  }
+}

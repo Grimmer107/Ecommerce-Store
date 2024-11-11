@@ -1,0 +1,115 @@
+@import 'styles/_mixins';
+@import 'styles/_breakpoints';
+
+.login {
+  @include signup-login-form-base-styles;
+  @include vertical-center;
+  @include form-heading-style;
+  @include signup-login-form-field-styles;
+  @include form-top-error;
+
+  .loader {
+    width: 100%;
+    height: 50vh;
+    @include vertical-center;
+  }
+
+  .google-login {
+    background-color: #dd4b39;
+    color: #fceceb;
+    outline: none;
+    border: none;
+    height: 3em;
+    font-size: 1rem;
+    flex-grow: 0;
+    flex-shrink: 0;
+    border-radius: 4px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    width: 16em;
+    padding: 0 1em;
+    @include horizontal-center;
+
+    @include md {
+      width: 22.5em;
+      padding: 0 0 0 0.25em;
+    }
+
+    i {
+      width: 10%;
+      font-size: 1.5em;
+    }
+
+    span {
+      width: 90%;
+      text-align: center;
+    }
+  }
+
+  .google-login:hover {
+    cursor: pointer;
+    background-color: #db311a;
+  }
+
+  p {
+    font-size: 0.8rem;
+    font-weight: 300;
+    word-wrap: break-word;
+    text-align: center;
+    max-width: 20em;
+    line-height: 1.75;
+
+    @include md {
+      max-width: 35em;
+    }
+  }
+
+  .verify-email {
+    outline: none;
+    border: none;
+    height: 3em;
+    font-size: 0.9rem;
+    flex-grow: 0;
+    flex-shrink: 0;
+    border-radius: 8px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    width: 16em;
+    padding: 0 1em;
+    border: 2px solid #212121;
+    background-color: white;
+    color: #212121;
+    letter-spacing: 0.4px;
+  }
+
+  .verify-email:hover {
+    cursor: pointer;
+    background-color: #212121;
+    color: white;
+  }
+
+  .signin-option {
+    @include horizontal-center;
+    color: #757575;
+    font-size: 0.725rem;
+    font-weight: 400;
+    justify-content: space-evenly;
+    margin: 2em auto;
+    letter-spacing: 0.5px;
+
+    @include sm {
+      font-size: 0.9rem;
+    }
+
+    .link {
+      text-decoration: none;
+      color: #757575;
+      cursor: pointer;
+    }
+
+    .separater {
+      font-size: 1.5em;
+      margin: auto 1.5em;
+    }
+  }
+}

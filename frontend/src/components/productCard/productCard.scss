@@ -1,0 +1,51 @@
+@import 'styles/_mixins';
+
+.card {
+  @include vertical-center;
+  width: 15em;
+  padding: 1em;
+  text-align: center;
+  font-size: 1.2rem;
+  font-family: 'Roboto', sans-serif;
+  color: #424242;
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease;
+
+  .link {
+    text-decoration: none;
+    color: unset;
+
+    .image {
+      height: 12em;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .title {
+      font-weight: 300;
+      font-size: 0.9rem;
+      margin: 1em auto;
+      letter-spacing: 0.5px;
+    }
+
+    .price {
+      color: #ff6900;
+      letter-spacing: 0.75px;
+      font-weight: 400;
+      font-size: 1rem;
+    }
+
+    .available {
+      font-size: 0.95rem;
+    }
+  }
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}

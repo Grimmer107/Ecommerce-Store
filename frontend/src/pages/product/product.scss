@@ -1,0 +1,249 @@
+@import 'styles/_mixins';
+
+.product {
+  align-items: flex-start;
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+  @include vertical-center;
+
+  .loader {
+    width: 100%;
+    height: 50vh;
+    @include vertical-center;
+  }
+
+  @include breakpoint(1024px) {
+    @include horizontal-center;
+    align-items: flex-start;
+  }
+
+  .error {
+    @include horizontal-center;
+    height: 20em;
+
+    img {
+      width: 2em;
+      margin-right: 0.5em;
+    }
+  }
+
+  .images {
+    height: 40em;
+    @include vertical-center;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 90%;
+    margin-bottom: 4em;
+
+    @include breakpoint(1024px) {
+      width: 50%;
+      margin-bottom: 1em;
+    }
+
+    .image {
+      width: 100%;
+      height: 80%;
+      @include horizontal-center;
+
+      img {
+        max-width: 100%;
+        height: auto;
+        max-height: 100%;
+        object-fit: contain;
+
+        @include breakpoint(768px) {
+          width: 90%;
+        }
+      }
+    }
+
+    .image-list {
+      width: 100%;
+      height: 15%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      overflow: scroll;
+      white-space: nowrap;
+
+      @include breakpoint(768px) {
+        height: 20%;
+        width: 90%;
+        padding-left: 8px;
+      }
+
+      .thumbnail {
+        width: 5em;
+        height: 100%;
+        flex-shrink: 0;
+        @include horizontal-center;
+        margin-right: 1em;
+        border: 1px solid #ececec;
+
+        @include breakpoint(768px) {
+          width: 7em;
+        }
+
+        img {
+          width: 100%;
+          height: auto;
+          object-fit: contain;
+        }
+      }
+
+      .thumbnail:hover {
+        cursor: pointer;
+      }
+
+      .selected {
+        border-bottom: 2px solid black;
+      }
+    }
+  }
+
+  .description {
+    min-height: 40em;
+    background-color: #f6f6f6;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 90%;
+    margin-bottom: 2em;
+    font-size: 0.65rem;
+    padding: 4em 0.5em 1em;
+
+    @include breakpoint(420px) {
+      font-size: 0.8rem;
+      padding: 4em 1em 1em;
+    }
+
+    @include breakpoint(560px) {
+      font-size: 1rem;
+      padding: 4em 3em 1em;
+    }
+
+    @include breakpoint(1024px) {
+      width: 50%;
+      margin-bottom: 2em;
+    }
+
+    .title {
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      text-transform: capitalize;
+
+      @include breakpoint(420px) {
+        font-size: 1.1rem;
+      }
+
+      @include breakpoint(560px) {
+        font-size: 1.25rem;
+      }
+    }
+
+    .price {
+      color: #ff6900;
+      margin: 1.5em 0em;
+      font-size: 0.9rem;
+
+      @include breakpoint(420px) {
+        font-size: 1rem;
+      }
+
+      @include breakpoint(560px) {
+        font-size: 1.2rem;
+      }
+    }
+
+    .detail {
+      font-family: 'Roboto', sans-serif;
+      padding: 0.5em 0;
+      border-top: 1px solid #ecebeb;
+      border-bottom: 1px solid #ecebeb;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+
+      @include breakpoint(560px) {
+        max-width: 50em;
+      }
+
+      p {
+        letter-spacing: 0.5px;
+        font-weight: 400;
+      }
+
+      pre {
+        font-family: inherit;
+        white-space: pre-wrap;
+        overflow-wrap: break-word;
+        padding: 0em 5em 0.5em 1em;
+        letter-spacing: 0.3px;
+        font-weight: 300;
+        line-height: 1.5em;
+        width: 100%;
+        word-wrap: break-word;
+        word-break: break-all;
+      }
+    }
+
+    .available {
+      margin: 2em 0 1em;
+      letter-spacing: 0.5px;
+      font-weight: 400;
+
+      span {
+        margin-left: 0.5em;
+        font-weight: 400;
+        color: #ff6900;
+      }
+    }
+
+    .add-cart {
+      width: 100%;
+      height: 5em;
+      margin-top: 2em;
+      @include horizontal-center;
+
+      button {
+        height: 3.5em;
+        width: 50%;
+        @include horizontal-center;
+        padding: 1em 2em;
+        border-radius: 0.5em;
+        border: 2px solid #ff6b08;
+        color: #ff6b08;
+        background-color: unset;
+        margin: 1em auto 4em;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-size: 0.65rem;
+
+        @include breakpoint(460px) {
+          font-size: 0.8rem;
+        }
+
+        @include breakpoint(520px) {
+          font-size: 0.9rem;
+        }
+      }
+
+      button:hover {
+        cursor: pointer;
+        background-color: #ff6b08;
+        color: white;
+      }
+    }
+  }
+}
+
+.product-review {
+  width: 100%;
+  @include horizontal-center;
+  align-items: flex-start;
+}

@@ -1,0 +1,48 @@
+@import 'styles/_mixins';
+
+.filters {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  margin-bottom: 0.5em;
+  @include horizontal-center;
+  justify-content: flex-start;
+  width: 100%;
+  font-size: 0.65rem;
+
+  @include breakpoint(410px) {
+    font-size: 0.7rem;
+  }
+
+  @include breakpoint(480px) {
+    font-size: 0.8rem;
+  }
+
+  .filter {
+    @include horizontal-center;
+    justify-content: flex-start;
+
+    span {
+      color: #212121;
+    }
+
+    span:hover {
+      color: #ff6900;
+      cursor: pointer;
+    }
+
+    .separater {
+      font-size: 2em;
+      margin: 0 0.6em;
+      font-weight: 100;
+      color: rgb(176, 176, 176);
+
+      @include breakpoint(410px) {
+        margin: 0 0.8em;
+      }
+    }
+
+    .selected {
+      color: #ff6900;
+    }
+  }
+}

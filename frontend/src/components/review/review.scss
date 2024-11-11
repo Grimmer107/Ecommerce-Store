@@ -1,0 +1,156 @@
+@import 'styles/_mixins';
+
+.review {
+  @include vertical-center;
+  justify-content: flex-start;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  width: 100%;
+
+  button {
+    border: 2px solid #ff6b08;
+    color: white;
+    background-color: #ff6b08;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    font-size: 1rem;
+    margin: 2em 0;
+    padding: 1em 1.5em;
+    border-radius: 6px;
+
+    font-size: 0.8rem;
+
+    @include sm {
+      font-size: 0.9rem;
+    }
+    @include md {
+      font-size: 0.95rem;
+    }
+  }
+
+  button:hover {
+    cursor: pointer;
+    background-color: #ea5e00;
+  }
+
+  p {
+    margin-top: 0.5em;
+    font-weight: 300;
+    font-size: 0.9rem;
+    letter-spacing: 0.4px;
+  }
+
+  .link {
+    color: #ff6b08;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 400;
+  }
+
+  .link:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .review-form {
+    width: 100%;
+    @include horizontal-center;
+    border-top: 1px solid #ff6b08;
+    padding-top: 2em;
+
+    .error {
+      color: red;
+      font-weight: 400;
+      font-size: 0.75rem;
+      margin: 0;
+      margin: 1em 0em;
+    }
+
+    .rating {
+      margin: 1em 0em 2em 0;
+    }
+
+    form {
+      width: 80%;
+      text-align: center;
+
+      @include breakpoint(400) {
+        width: 70%;
+      }
+      @include sm {
+        width: 60%;
+      }
+      @include md {
+        width: 50%;
+      }
+      @include lg {
+        width: 40%;
+      }
+
+      h6 {
+        font-family: 'Roboto', sans-serif;
+        font-size: 0.95rem;
+        font-weight: 400;
+        margin: 1.5em 0 0.75em 0;
+        letter-spacing: 0.4px;
+      }
+
+      .field {
+        @include vertical-center;
+        align-items: flex-start;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        outline: none;
+        padding: 1.2em 1em;
+        height: 3em;
+        font-size: 0.9rem;
+        color: black;
+        margin: 0;
+        border-radius: 5px;
+        border: 1px solid #c0bfbf;
+        letter-spacing: 0.3px;
+        font-family: 'Roboto', sans-serif;
+      }
+
+      textarea:focus,
+      input:focus {
+        border: 2px solid #ff6b08;
+      }
+
+      textarea {
+        min-height: 10em;
+      }
+
+      input[type='submit'] {
+        border: 1px solid #ff6b08;
+        color: #ff6b08;
+        background-color: white;
+        text-transform: uppercase;
+        font-weight: 400;
+        letter-spacing: 0.5px;
+        margin: 2em 0 3em;
+        width: 10em;
+        padding: 0.5em;
+        height: 3em;
+        font-size: 0.8rem;
+
+        @include sm {
+          font-size: 0.9rem;
+        }
+        @include md {
+          font-size: 0.95rem;
+        }
+      }
+
+      input[type='submit']:hover {
+        cursor: pointer;
+        background-color: #ff6b08;
+        color: white;
+      }
+    }
+  }
+}

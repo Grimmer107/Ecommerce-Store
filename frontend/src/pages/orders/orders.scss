@@ -1,0 +1,237 @@
+@import 'styles/_mixins';
+
+.orders {
+  width: 100%;
+  height: 100%;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+  @include vertical-center;
+  justify-content: flex-start;
+  margin-bottom: 4em;
+
+  .loader {
+    width: 100%;
+    height: 50vh;
+    @include vertical-center;
+  }
+
+  .not-logged {
+    @include vertical-center;
+    width: 100%;
+    height: 100%;
+    min-height: 30em;
+
+    .link {
+      color: #ff6b08;
+      text-decoration: none;
+    }
+
+    .link:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+
+  .error {
+    color: red;
+    font-size: 1rem;
+    min-height: 20em;
+    width: 100%;
+    @include vertical-center;
+  }
+
+  .table {
+    border: 1px solid #dedede;
+    font-weight: 400;
+    border-radius: 4px;
+    margin-top: 2em;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    min-width: 10em;
+    width: 95%;
+
+    @include breakpoint(420px) {
+      min-width: 25em;
+      width: 90%;
+    }
+
+    @include sm {
+      min-width: 30em;
+    }
+
+    @include md {
+      width: 80%;
+      min-width: 40em;
+    }
+
+    thead tr th {
+      padding: 1em 0;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      min-width: 2em;
+      font-size: 0.6rem;
+
+      @include breakpoint(420px) {
+        font-size: 0.7rem;
+      }
+
+      @include sm {
+        font-size: 0.8rem;
+      }
+    }
+
+    tbody .row {
+      width: 100%;
+
+      td {
+        border-top: 1px solid #dedede;
+        text-align: center;
+        font-weight: 400;
+        color: #212121;
+        overflow-y: scroll;
+        letter-spacing: 0.4px;
+        font-size: 0.5rem;
+        padding: 1.25em 0.3em;
+
+        @include breakpoint(420px) {
+          font-size: 0.6rem;
+          padding: 1.25em 0.5em;
+        }
+
+        @include breakpoint(460px) {
+          font-size: 0.7rem;
+          padding: 1.25em 0.7em;
+        }
+
+        @include sm {
+          font-size: 0.8rem;
+          padding: 1.25em 0.8em;
+        }
+
+        @include breakpoint(630px) {
+          font-size: 0.9rem;
+          padding: 1.25em;
+        }
+      }
+
+      .id {
+        font-weight: 600;
+      }
+
+      .total {
+        color: #ff6b08;
+        max-width: 10em;
+        min-width: 3em;
+
+        @include breakpoint(420px) {
+          min-width: 5em;
+        }
+      }
+
+      .payment-method {
+        font-size: 0.55rem;
+        font-weight: 400;
+        color: #212121;
+
+        @include breakpoint(360px) {
+          font-size: 0.6rem;
+        }
+
+        @include sm {
+          font-size: 0.7rem;
+        }
+
+        @include breakpoint(560px) {
+          font-size: 0.9rem;
+        }
+      }
+
+      .status {
+        width: 5em;
+
+        @include md {
+          width: 12em;
+        }
+
+        span {
+          padding: 0.5em;
+          border-radius: 4px;
+          font-size: 0.6rem;
+          font-weight: 600;
+
+          @include breakpoint(420px) {
+            font-size: 0.7rem;
+            padding: 0.5em 0.75em;
+          }
+
+          @include sm {
+            font-size: 0.8rem;
+            padding: 0.5em 1em;
+          }
+        }
+
+        .pending {
+          border: 1px solid #ccc47c;
+          background-color: #fff9c3;
+          color: #c6a870;
+        }
+
+        .delivering {
+          border: 1px solid #5498f1;
+          background-color: #dbeafe;
+          color: #2c5cdb;
+        }
+
+        .completed {
+          border: 1px solid #2d8d4f;
+          background-color: #dcfce8;
+          color: #469d66;
+        }
+
+        .state {
+          border: 1px solid #757d88;
+          background-color: #f3f4f6;
+          color: #8a909a;
+        }
+
+        .cancelled {
+          border: 1px solid red;
+          background-color: #fdf3f8;
+          color: #c03230;
+        }
+      }
+
+      .delete-order {
+        width: 4em;
+
+        @include breakpoint(420px) {
+          width: 5em;
+        }
+
+        .delete {
+          display: block;
+          min-width: 2em;
+          min-height: 2em;
+          @include vertical-center;
+          border-radius: 5px;
+          color: #757d88;
+
+          i {
+            font-size: 0.8rem;
+          }
+
+          @include breakpoint(420px) {
+            i {
+              font-size: 1rem;
+            }
+          }
+        }
+
+        .delete:hover {
+          background-color: #fbd5d5;
+          cursor: pointer;
+          color: #f44336;
+        }
+      }
+    }
+  }
+}

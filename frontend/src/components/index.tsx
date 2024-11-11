@@ -1,0 +1,9 @@
+export { default as Filters } from 'components/filters/filters';
+export { default as Header } from 'components/header/header';
+export { default as Layout } from 'components/layout/layout';
+export { default as ProductCard } from 'components/productCard/productCard';
+export { default as ProductsGrid } from 'components/productsGrid/productsGrid';
+export { default as SearchBar } from 'components/searchBar/searchBar';
+export { default as CheckoutForm } from 'components/checkoutForm/checkoutForm';
+export { default as Review } from 'components/review/review';
+export { default as ProtectedRoute } from 'components/protectedRoute/protectedRoute';

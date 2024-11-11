@@ -1,0 +1,31 @@
+@import 'styles/_mixins';
+
+.grid {
+  width: 75%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 1.75em 2em;
+  justify-items: center;
+  align-items: center;
+  padding: 2em auto;
+
+  .loader {
+    width: 100%;
+    height: 30vh;
+    @include vertical-center;
+  }
+
+  @include breakpoint(420px) {
+    padding: 2em 1em 2em 3em;
+  }
+
+  .error {
+    @include horizontal-center;
+    height: 20em;
+
+    img {
+      width: 2em;
+      margin-right: 0.5em;
+    }
+  }
+}

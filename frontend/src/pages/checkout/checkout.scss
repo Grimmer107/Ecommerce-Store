@@ -1,0 +1,243 @@
+@import 'styles/_mixins';
+
+.checkout {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+
+  @include breakpoint(1100px) {
+    align-items: flex-start;
+    flex-direction: row;
+  }
+
+  .loader {
+    width: 100%;
+    height: 50vh;
+    @include vertical-center;
+  }
+
+  .checkout-form-section {
+    width: 100%;
+    height: 100%;
+    min-height: 40em;
+    @include vertical-center;
+    align-items: flex-start;
+
+    @include breakpoint(1100px) {
+      width: 52%;
+      align-items: flex-end;
+    }
+  }
+
+  .order-detail-section {
+    width: 100%;
+    height: 100%;
+    min-height: 40em;
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2.5em;
+    margin-bottom: 2em;
+    margin-top: 2em;
+
+    @include breakpoint(1100px) {
+      width: 48%;
+      align-items: flex-start;
+      margin-top: 0;
+    }
+
+    .cart-item-list {
+      width: 18em;
+
+      @include breakpoint(350px) {
+        width: 20em;
+      }
+
+      @include breakpoint(440px) {
+        width: 25em;
+      }
+
+      @include breakpoint(560px) {
+        width: 30em;
+        max-width: 30em;
+      }
+
+      .cart-item {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-bottom: 1.5em;
+
+        .image {
+          width: 4em;
+          height: 4em;
+          position: relative;
+          @include horizontal-center;
+          margin-right: 1em;
+          border: 1px solid #c8c7c7;
+          border-radius: 4px;
+          background-color: white;
+
+          img {
+            width: 100%;
+            height: auto;
+            max-height: 4em;
+            object-fit: contain;
+            border-radius: 4px;
+          }
+
+          span {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: rgba(0, 0, 0, 0.56);
+            color: white;
+            width: 1.75em;
+            height: 1.75em;
+            border-radius: 50%;
+            font-size: 0.75rem;
+            @include horizontal-center;
+          }
+        }
+
+        .name {
+          font-size: 0.7rem;
+          font-weight: 400;
+          letter-spacing: 0.3px;
+          padding: 0.5em 0 0 0.25em;
+          height: 4em;
+          width: 50%;
+          overflow-x: scroll;
+          word-wrap: break-word;
+
+          @include breakpoint(440px) {
+            font-size: 0.8rem;
+          }
+
+          @include breakpoint(560px) {
+            font-size: 0.9rem;
+          }
+        }
+
+        .price {
+          width: 30%;
+          height: 4em;
+          font-size: 0.75rem;
+          padding-top: 2em;
+          text-align: right;
+
+          @include breakpoint(440px) {
+            font-size: 0.8rem;
+          }
+
+          @include breakpoint(560px) {
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+
+    .billing {
+      width: 18em;
+
+      @include breakpoint(350px) {
+        width: 20em;
+      }
+
+      @include breakpoint(440px) {
+        width: 25em;
+      }
+
+      @include breakpoint(560px) {
+        width: 30em;
+      }
+
+      .sub-total,
+      .shipping {
+        width: 100%;
+        font-weight: 400;
+        @include horizontal-center;
+        justify-content: space-between;
+        margin-top: 1em;
+        letter-spacing: 0.25px;
+        font-size: 0.8rem;
+
+        @include breakpoint(440px) {
+          font-size: 0.85rem;
+        }
+
+        @include breakpoint(560px) {
+          font-size: 0.95rem;
+          padding-right: 1em;
+        }
+      }
+
+      .sub-total {
+        border-top: 1px solid #c8c7c7;
+        padding-top: 1.5em;
+      }
+
+      .total {
+        width: 100%;
+        font-weight: 500;
+        @include horizontal-center;
+        justify-content: space-between;
+        margin-top: 1.5em;
+        letter-spacing: 0.5px;
+
+        @include breakpoint(560px) {
+          padding-right: 1em;
+        }
+
+        span {
+          font-size: 0.9rem;
+
+          @include breakpoint(440px) {
+            font-size: 1rem;
+          }
+
+          @include breakpoint(560px) {
+            font-size: 1.2rem;
+          }
+        }
+
+        .amount {
+          font-size: 1rem;
+
+          @include breakpoint(440px) {
+            font-size: 1.1rem;
+          }
+
+          @include breakpoint(560px) {
+            font-size: 1.2rem;
+          }
+
+          span {
+            text-transform: uppercase;
+            font-weight: 400;
+            font-size: 0.6rem;
+            margin-right: 0.75em;
+            color: #595858;
+
+            @include breakpoint(440px) {
+              font-size: 0.65rem;
+            }
+
+            @include breakpoint(560px) {
+              font-size: 0.7rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

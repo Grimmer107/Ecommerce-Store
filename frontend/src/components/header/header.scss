@@ -1,0 +1,284 @@
+@import 'styles/_mixins';
+@import 'styles/_breakpoints';
+
+$menubar-font-color: rgb(176, 176, 176);
+$menubar-font-hover-color: rgb(226, 225, 225);
+
+.header {
+  width: 100%;
+  padding: 0;
+  @include vertical-center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+
+  .menubar {
+    background-color: #212121;
+    padding: 0 16px 0 2px;
+    width: 100%;
+    min-height: 2.75em;
+    height: 100%;
+    color: $menubar-font-color;
+    @include horizontal-center;
+    font-size: 0.75em;
+
+    @include md {
+      font-size: 0.9em;
+      padding: 0 15%;
+    }
+
+    @include lg {
+      font-size: 1em;
+    }
+
+    .left-section {
+      flex: 0 0 auto;
+      @include horizontal-center;
+
+      .link {
+        text-decoration: none;
+        color: $menubar-font-color;
+        @include horizontal-center;
+      }
+
+      span {
+        text-align: center;
+        letter-spacing: 0.2px;
+        margin: 0 0.5em;
+        font-size: 0.6rem;
+
+        @include md {
+          font-size: 0.75em;
+          letter-spacing: 0.3px;
+          margin: 0 0.75em;
+        }
+
+        @include lg {
+          font-size: 0.8rem;
+          letter-spacing: 0.4px;
+          margin: 0 1em;
+        }
+      }
+
+      span:hover {
+        color: $menubar-font-hover-color;
+        cursor: pointer;
+      }
+    }
+
+    .center-section {
+      flex: 1 1 auto;
+    }
+
+    .right-section {
+      flex: 0 0 auto;
+      @include horizontal-center;
+      color: $menubar-font-color;
+
+      span {
+        text-align: center;
+        letter-spacing: 0.2px;
+
+        @include md {
+          letter-spacing: 0.35px;
+        }
+
+        @include lg {
+          letter-spacing: 0.5px;
+        }
+      }
+
+      .username {
+        font-weight: 300;
+        text-transform: capitalize;
+        color: $menubar-font-hover-color;
+        font-size: 0.8em;
+        letter-spacing: 0.5px;
+        margin-left: 1em;
+
+        @include md {
+          letter-spacing: 0.6px;
+          margin-left: 0;
+        }
+
+        @include lg {
+          letter-spacing: 0.75px;
+        }
+      }
+
+      .icon {
+        position: relative;
+        i {
+          color: $menubar-font-color;
+        }
+        margin-left: 0.75em;
+
+        @include md {
+          margin-left: 1.2em;
+        }
+
+        @include lg {
+          margin-left: 1.5em;
+        }
+
+        .cart-count {
+          position: absolute;
+          color: white;
+          background-color: red;
+          border-radius: 50%;
+          @include horizontal-center;
+          width: 1.5em;
+          height: 1.5em;
+          font-size: 0.45rem;
+          bottom: 1em;
+          left: 1.7em;
+          font-weight: 500;
+
+          @include md {
+            width: 1.65em;
+            height: 1.65em;
+            font-size: 0.475rem;
+            bottom: 1em;
+            left: 2em;
+            font-weight: 600;
+          }
+
+          @include lg {
+            width: 1.75em;
+            height: 1.75em;
+            font-size: 0.5rem;
+          }
+        }
+      }
+
+      .logout {
+        margin: 0;
+        margin-left: 1.5em;
+
+        @include md {
+          margin-left: 1.75em;
+        }
+
+        @include lg {
+          margin-left: 2em;
+        }
+      }
+
+      .icon i:hover,
+      .logout:hover {
+        color: $menubar-font-hover-color;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .burger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding: 0;
+    width: 100%;
+    position: absolute;
+    z-index: 10;
+    top: 2em;
+    bottom: 0;
+
+    .burger-menu-button {
+      font-size: 1.5em;
+      margin: 1em;
+    }
+
+    .burger-menu-button:hover {
+      cursor: pointer;
+    }
+
+    .burger-options {
+      @include vertical-center;
+      justify-content: flex-start;
+      padding: 2em 1em;
+      width: 100%;
+      background-color: #212121;
+      height: 100%;
+
+      .link {
+        text-decoration: none;
+        color: #ff6900;
+        margin-top: 1em;
+      }
+
+      .link:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
+
+    .hidden {
+      display: none;
+    }
+  }
+
+  @include md {
+    .burger-menu {
+      display: none;
+    }
+  }
+
+  .navbar {
+    width: 100%;
+    min-height: 5em;
+    max-height: 5em;
+    border-bottom: 1px solid #e5e4e4;
+    @include horizontal-center;
+    justify-content: space-around;
+
+    .nav-items {
+      display: none;
+    }
+
+    @include md {
+      .nav-items {
+        @include horizontal-center;
+        justify-content: space-around;
+
+        img {
+          height: 3.5em;
+          margin-right: 1em;
+
+          @include lg {
+            height: 4em;
+            margin-right: 2em;
+          }
+        }
+
+        .link {
+          text-decoration: none;
+
+          span {
+            word-wrap: break-word;
+            text-align: center;
+            display: block;
+            font-weight: 300;
+            color: #212121;
+            text-decoration: none;
+            margin: 0 1em;
+            font-size: 0.6rem;
+
+            @include md {
+              margin: 0 1em;
+              font-size: 0.75rem;
+            }
+
+            @include lg {
+              margin: 0 1.5em;
+              font-size: 0.9rem;
+            }
+          }
+
+          span:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

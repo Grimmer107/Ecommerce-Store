@@ -1,0 +1,89 @@
+@import 'styles/_mixins';
+
+.search {
+  @include horizontal-center;
+  justify-content: center;
+  width: 90%;
+  height: 4em;
+  padding: 0;
+
+  @include sm {
+    width: 80%;
+  }
+
+  @include breakpoint(680px) {
+    width: 60%;
+  }
+
+  .search-bar {
+    @include horizontal-center;
+    flex: auto 0 0;
+    justify-content: flex-start;
+    border: 1px solid #acacac;
+    border-radius: 0.5em;
+    height: 2.5em;
+
+    @include sm {
+      height: 3em;
+    }
+
+    input {
+      width: 100%;
+      font-family: 'Roboto', sans-serif;
+      height: 2.5em;
+      border: none;
+      outline: none;
+      border-top-right-radius: 0.75em;
+      border-bottom-right-radius: 0.75em;
+      font-weight: 300;
+      color: #212121;
+      padding: 0.5em;
+      letter-spacing: 0.4px;
+      font-size: 0.75rem;
+
+      @include sm {
+        font-size: 0.9rem;
+        height: 3em;
+      }
+    }
+
+    input::placeholder {
+      font-weight: 300;
+      color: #212121;
+    }
+
+    span {
+      padding: 0.25em;
+      margin-left: 0.25em;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  button {
+    height: 3.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1em 2em;
+    margin-left: 1em;
+    border-radius: 0.5em;
+    border: 1.5px solid #ff6b08;
+    color: #ff6b08;
+    background-color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.7rem;
+
+    @include sm {
+      font-size: 0.8rem;
+    }
+  }
+
+  button:hover {
+    cursor: pointer;
+    background-color: #ff6b08;
+    color: white;
+  }
+}
